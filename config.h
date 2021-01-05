@@ -6,7 +6,7 @@ static const unsigned int snap      = 0;       /* snap pixel */
 static const unsigned int gappx     = 5;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Roboto Mono:size=10", "fontawesome:size=8.8" };
+static const char *fonts[]          = { "Roboto Mono:size=8.8", "fontawesome:size=8.8" };
 static const char bg_norm[]         = "#080808";
 static const char fg_norm[]         = "#efefef";
 static const char bo_norm[]         = "#080808";
@@ -19,8 +19,20 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { fg_selt,   bg_selt,   bo_selt  },
 };
 
+/* autostart using 'cool autostart' patch */
+static const char *const autostart[] = {
+	"setxkbmap", "-option", "ctrl:swapcaps", NULL,
+	"xmodmap", "/usr/home/fa2_l/.Xmodmap", NULL,
+	"xcompmgr", NULL,
+	"setbg", NULL,
+	"ibus-daemon", "-drx", NULL,
+	"pulseaudio", "--daemon", NULL,
+	"/usr/home/fa2_l/.local/bin/dwmbar", NULL,
+	NULL
+};
+
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4" };
 
 static const Rule rules[] = {
         /* xprop(1):
@@ -29,6 +41,7 @@ static const Rule rules[] = {
          */
         /* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
         { "Gimp",    NULL,     NULL,           0,         1,          0,                  -1 },
+        { "Fceux",    NULL,     NULL,           0,         1,          0,                  -1 },
 };
 
 /* layout(s) */
