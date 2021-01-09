@@ -22,10 +22,10 @@ static const char *colors[][3]      = {
 /* autostart using 'cool autostart' patch */
 static const char *const autostart[] = {
 	"setxkbmap", "-option", "ctrl:swapcaps", NULL,
+	"ibus-daemon", "-drx", NULL,
 	"xmodmap", "/usr/home/fa2_l/.Xmodmap", NULL,
 	"xcompmgr", NULL,
 	"setbg", NULL,
-	"ibus-daemon", "-drx", NULL,
 	"pulseaudio", "--daemon", NULL,
 	"/usr/home/fa2_l/.local/bin/dwmbar", NULL,
 	NULL
