@@ -2,11 +2,12 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap      = 0;       /* snap pixel */
+static const unsigned int snap      = 0;        /* snap pixel */
 static const unsigned int gappx     = 5;
+static const unsigned int border    = 8;	/* border pixel of the bar */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Roboto Mono:size=8.8", "fontawesome:size=8.8" };
+static const char *fonts[]          = { "Roboto Mono:size=10", "fontawesome:size=10" };
 static const char bg_norm[]         = "#080808";
 static const char fg_norm[]         = "#efefef";
 static const char bo_norm[]         = "#080808";
@@ -51,9 +52,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ " til ",      tile },    /* first entry is default */
+	{ " flt ",      NULL },    /* no layout function means floating behavior */
+	{ " mnc ",      monocle },
 };
 
 /* key definitions */
@@ -82,7 +83,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_m,      spawn,          SHCMD(TERM " -e ncmpcpp") },
 	{ MODKEY|ShiftMask, 		XK_s,      spawn,          SHCMD(SCROT " -m '/usr/home/fa2_l/Screenshots/screenshot-all-%d-%m-%y-%H-%M-%S.png'") },
 	{ MODKEY|ShiftMask, 		XK_f,      spawn,          SHCMD(SCROT " -ub '/usr/home/fa2_l/Screenshots/screenshot-fixed-%d-%m-%y-%H-%M-%S.png'") },
-	{ MODKEY, 			XK_z,      spawn,          SHCMD("ibus engine m17n:vi:telex") },
+	{ MODKEY, 			XK_z,      spawn,          SHCMD("ibus engine Unikey") },
 	{ MODKEY|ShiftMask, 		XK_z,      spawn,          SHCMD("ibus engine xkb:us::eng") },
 	{ MODKEY|ShiftMask, 		XK_Up,     spawn,          SHCMD("amixer set Master 1%+") },
 	{ MODKEY|ShiftMask, 		XK_Down,   spawn,          SHCMD("amixer set Master 1%-") },
