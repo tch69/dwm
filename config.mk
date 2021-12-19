@@ -4,11 +4,11 @@ VERSION = 6.2
 # Customize below to fit your system
 
 # paths
-PREFIX = /usr/home/fa2_l/.local
+PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/local/include
-X11LIB = /usr/local/lib
+X11INC = /usr/include
+X11LIB = /usr/lib
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
@@ -22,7 +22,7 @@ FREETYPEINC = ${X11INC}/freetype2
 
 # includes and libs
 INCS = -I${X11INC} -I${FREETYPEINC}
-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -lX11-xcb -lxcb -lxcb-res
+LIBS = -R${X11LIB} -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -lX11-xcb -lxcb -lxcb-res
 
 # flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
