@@ -1,2 +1,2 @@
 # dwm
-Bản dwm qua chỉnh sửa của mình, đuợc thêm các bản vá `cool autostart`, `attachbottom` và `bar height`
+My modified build of dwm, with `cool autostart`, `attachbottom` and `bar height` added.
