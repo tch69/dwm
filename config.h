@@ -23,8 +23,8 @@ static const char *colors[][3]      = {
 /* autostart using 'cool autostart' patch */
 static const char *const autostart[] = {
 	"ibus-daemon", "-drx", NULL,
-	"setbg", NULL,
 	"dwmbar", NULL,
+	"setbg", NULL,
 /*	"pulseaudio", "--daemon", NULL, */
 	NULL
 };
@@ -37,9 +37,13 @@ static const Rule rules[] = {
          *      WM_CLASS(STRING) = instance, class
          *      WM_NAME(STRING) = title
          */
-        /* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-        { "Gimp",    NULL,     NULL,           0,         1,          0,                  -1 },
-        { "Fceux",    NULL,     NULL,           0,         1,          0,                  -1 },
+        /* class 		instance 	title           tags 	mask  	isfloating  isterminal  noswallow  	monitor */
+        { "Gimp", 		NULL,		NULL, 		0,	1,	0, 	 	-1 },
+        { "Firefox",	   	NULL, 		NULL, 		9,	0, 	0, 		-1 },
+	{ "fceux",		NULL,	 	NULL, 		0, 	1, 	0, 		-1 },
+	{ "Fceux",		NULL,	 	NULL, 		0, 	1, 	0, 		-1 },
+	{ "Fceux-gtk",		NULL,	 	NULL, 		0, 	1, 	0, 		-1 },
+	{ "Mesen",		NULL,	 	NULL, 		0, 	1, 	0, 		-1 },
 };
 
 /* layout(s) */
@@ -90,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY, 			XK_b, 		togglebar, 		{0} },
 	{ MODKEY, 			XK_space, 	zoom, 			{0} },
 	{ MODKEY, 			XK_Tab, 	focusstack, 		{.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_Tab, 	focusstack, 		{.i = -1 } },
 	{ MODKEY, 			XK_i, 		incnmaster, 		{.i = +1 } },
 	{ MODKEY, 			XK_d, 		incnmaster, 		{.i = -1 } },
 	{ MODKEY, 			XK_h, 		setmfact, 		{.f = -0.05} },
