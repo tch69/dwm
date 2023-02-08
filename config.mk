@@ -1,14 +1,14 @@
 # dwm version
-VERSION = 6.2
+VERSION = 6.4
 
 # Customize below to fit your system
 
 # paths
-PREFIX = /usr/local
+PREFIX = ${HOME}/.local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/include
-X11LIB = /usr/lib
+X11INC = /usr/X11R6/include
+X11LIB = /usr/X11R6/lib
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
@@ -16,13 +16,14 @@ XINERAMAFLAGS = -DXINERAMA
 
 # freetype
 FREETYPELIBS = -lfontconfig -lXft
-#FREETYPEINC = /usr/include/freetype2
+FREETYPEINC = /usr/include/freetype2
 # OpenBSD (uncomment)
-FREETYPEINC = ${X11INC}/freetype2
+#FREETYPEINC = ${X11INC}/freetype2
+#MANPREFIX = ${PREFIX}/man
 
 # includes and libs
 INCS = -I${X11INC} -I${FREETYPEINC}
-LIBS = -R${X11LIB} -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -lX11-xcb -lxcb -lxcb-res
+LIBS = -L${X11LIB} -R${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -lXrender -lX11-xcb -lxcb -lxcb-res
 
 # flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}

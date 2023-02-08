@@ -2,22 +2,24 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
-
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
-
+This is my personal build of dwm, with my colorscheme, keybinds and these patches:
+- alpha
+- attachbelow
+- bar height (spacing)
+- cool autostart
+- fullgaps
+- swallow
 
 Installation
 ------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+By default, this build installs dwm into ~/.local/bin. Using superuser rights here
+is not recommended.
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+To build and install this build, issue the following commands:
 
-    make clean install
-
+	make clean
+	make
+	make install
 
 Running dwm
 -----------
@@ -40,9 +42,3 @@ like this in your .xinitrc:
     	sleep 1
     done &
     exec dwm
-
-
-Configuration
--------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
