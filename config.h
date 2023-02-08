@@ -29,9 +29,10 @@ static const unsigned int alphas[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"feh", "--bg-scale", "/home/tch/.local/share/backgrounds/7nqvy8ygnufa1.jpg", NULL,
+	"feh", "--bg-fill", "/home/tch/.local/share/backgrounds/7nqvy8ygnufa1.jpg", NULL,
 	"xrdb", "/home/tch/.Xresources", NULL,
 	"picom", NULL,
+	"dwmblocks", NULL,
 	NULL /* terminate */
 };
 
@@ -100,6 +101,8 @@ static const Key keys[] = {
 	{ MODKEY, 			XK_space, 	zoom,           {0} },
 	{ MODKEY, 			XK_0, 		view, 		{0} },
 	{ MODKEY, 			XK_x,      	killclient,     {0} },
+	{ MODKEY, 			XK_t,	 	setlayout, 	{0} },
+	{ MODKEY|ShiftMask, 		XK_t, 		togglefloating, {0} },
 	{ MODKEY, 			XK_minus, 	setgaps, 	{.i = -1 } },
 	{ MODKEY, 			XK_equal,	setgaps, 	{.i = +1 } },
 	{ MODKEY|ShiftMask, 		XK_equal, 	setgaps, 	{.i = 0  } },
