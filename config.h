@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
+static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 static const char *const autostart[] = {
 	"feh", "--bg-fill", "/home/tch/.local/share/backgrounds/7nqvy8ygnufa1.jpg", NULL,
 	"xrdb", "/home/tch/.Xresources", NULL,
-	"picom", NULL,
+	"xcompmgr", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "Fceux-gtk", NULL, NULL, 		0, 	1, 	0, 		-1 },
 };
 
 /* layout(s) */
@@ -77,7 +78,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "Open: ", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
