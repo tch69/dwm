@@ -118,7 +118,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8, 				7)
 	TAGKEYS(                        XK_9, 				8)
 	{ MODKEY|ShiftMask,             XK_q, 		quit, 		{0} },
-	{ MODKEY|ShiftMask,		XK_x,      	spawn, 		SHCMD("pkill dwm") },
+	{ MODKEY|ShiftMask,		XK_r,      	spawn, 		SHCMD("pkill dwm") },
 };
 
 /* button definitions */
